@@ -13,6 +13,8 @@ export const apiClient = async (endpoint: string, options: RequestInit = {}) => 
       },
       ...options,
     });
+    console.log('Base URL:', import.meta.env.VITE_API_URL);
+console.log('Endpoint:', endpoint);
 
     if (!response.ok) {
       if (navigate) {
