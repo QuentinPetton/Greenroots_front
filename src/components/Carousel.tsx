@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Carousel({ images }: { images: Array<{ src: string; alt: string }> }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [imagesPerView, setImagesPerView] = useState(window.innerWidth >= 1280 ? 3 : 1);
+  const [imagesPerView, setImagesPerView] = useState(window.innerWidth >= 1440 ? 3 : 1);
   const navigate = useNavigate();
 
 
@@ -20,7 +20,7 @@ function Carousel({ images }: { images: Array<{ src: string; alt: string }> }) {
 // Met à jour `imagesPerView` en cas de redimensionnement
 useEffect(() => {
   const handleResize = () => {
-    setImagesPerView(window.innerWidth >= 1280 ? 3 : 1);
+    setImagesPerView(window.innerWidth >= 1440 ? 3 : 1);
   };
   window.addEventListener('resize', handleResize);
   return () => window.removeEventListener('resize', handleResize);
